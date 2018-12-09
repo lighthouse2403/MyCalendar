@@ -25,7 +25,7 @@ class MonthCalendarViewController: BaseViewController, UITableViewDelegate, UITa
     }
     
     func setupNavigationBar() {
-        self.title  = "Calendar"
+        self.title  = "Tháng 12"
     }
     
     // MARK: - UITableView Delegate, Datasource
@@ -35,6 +35,10 @@ class MonthCalendarViewController: BaseViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
