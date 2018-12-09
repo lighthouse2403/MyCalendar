@@ -41,7 +41,7 @@ class DateCalendarViewController: BaseViewController {
         let (d,m,y) = (component.day ?? 0, component.month ?? 0, component.year ?? 0)
         monthLabel.text = "Tháng " + "\(m)" + " Năm " + "\(y)"
         dateLabel.text = "\(d)"
-        dayOfWeekLabel.text = DateMacro.dateToDayOfWeek(d, mm: m, yy: y)
+        dayOfWeekLabel.text =  DateMacro.dateToDayOfWeek(date: date)
         
         let (ld,lm,ly) = DateMacro.convertSolar2Lunar(d, mm: m, yy: y, timeZone: 7)
         

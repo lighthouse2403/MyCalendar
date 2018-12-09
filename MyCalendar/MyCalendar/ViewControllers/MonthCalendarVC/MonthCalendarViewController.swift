@@ -8,23 +8,39 @@
 
 import UIKit
 
-class MonthCalendarViewController: UIViewController {
-
+class MonthCalendarViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tableView: UITableView!
+    var currentTimeInterval = Date().timeIntervalSince1970
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.setupUI()
+        self.setupNavigationBar()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    // MARK Setup UI
+    func setupUI() {
+        tableView.register(UINib.init(nibName: "MonthCalendarTableViewCell", bundle: nil), forCellReuseIdentifier: "MonthCalendarTableViewCell")
+        tableView.isScrollEnabled   = false
     }
-    */
-
+    
+    func setupNavigationBar() {
+        self.title  = "Calendar"
+    }
+    
+    // MARK: - UITableView Delegate, Datasource
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MonthCalendarTableViewCell") as! MonthCalendarTableViewCell
+        
+        return cell
+    }
+    
 }

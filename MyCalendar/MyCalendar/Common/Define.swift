@@ -8,7 +8,7 @@
 
 import Foundation
 
-let themeBackgroundColor = 0x32cd32
+let themeBackgroundColor = 0x73D4FF
 let arrCan = ["Giáp","Ất","Bính","Đinh","Mậu","Kỷ","Canh","Tân","Nhâm","Quý"]
 let arrChi = ["Tý","Sửu","Dần","Mão","Thìn","Tỵ","Ngọ","Mùi","Thân","Dậu","Tuất","Hợi"]
 // TYPES

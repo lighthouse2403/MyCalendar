@@ -55,7 +55,7 @@ class MThemes: NSObject {
     
     
     func tabBarTextColor() -> UIColor {
-        return UIColor.white
+        return UIColor.black
     }
     
     

@@ -12,7 +12,7 @@ class DateMacro: NSObject {
     
    static func getComponents(_ date: Date) -> DateComponents {
         let calendar = Calendar.current
-        let unitFlags = Set<Calendar.Component>([.day, .month, .year, .hour, .minute, .second])
+        let unitFlags = Set<Calendar.Component>([.day, .month, .year, .hour, .minute, .second, .weekday])
         return calendar.dateComponents(unitFlags, from: date)
     }
     
@@ -189,10 +189,12 @@ class DateMacro: NSObject {
         return self.jdToDate(monthStart+lunarDay-1)
     }
     
-    static func dateToDayOfWeek(_ dd: Int, mm: Int, yy: Int) -> String {
-        let jd = self.jdFromDate(dd, mm: mm, yy: yy)
-        let x = Int(jd%7)
-        switch x {
+    static func dateToDayOfWeek(date: Date) -> String {
+//        let jd = self.jdFromDate(dd, mm: mm, yy: yy)
+//        let x = Int(jd%7)
+        let component   = DateMacro.getComponents(date)
+        let weekDay     = component.weekday
+        switch weekDay {
         case 1:
             return "Chủ Nhật"
         case 2:
