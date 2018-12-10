@@ -12,6 +12,7 @@ class MonthCalendarViewController: BaseViewController, UITableViewDelegate, UITa
     @IBOutlet weak var tableView: UITableView!
     var currentDate         = Date()
     var datesArray          = [[Double]]()
+    var lunarDateArray      = [[Double]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +62,6 @@ class MonthCalendarViewController: BaseViewController, UITableViewDelegate, UITa
     // MARK: Get dates of this month
     func getDates() {
         datesArray = DateMacro.generateDatesOfMonth(currentDate: currentDate)
-        print(datesArray.description)
+        
     }
 }
