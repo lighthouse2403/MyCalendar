@@ -29,7 +29,7 @@ class MonthCalendarTableViewCell: UITableViewCell {
     @IBAction func tappedDate(_ sender: UIButton) {
     }
     
-    func setupDate(mon: Double, tue: Double, wed: Double, thur: Double, fri: Double, sat: Double, sun: Double, lastDay: Double, firstDay: Double) {
+    func setupDate(mon: Double, tue: Double, wed: Double, thur: Double, fri: Double, sat: Double, sun: Double, currentDate: Date) {
         mondayLabel.text    = "\(Date.init(timeIntervalSince1970: mon).Day)"
         tueLabel.text       = "\(Date.init(timeIntervalSince1970: tue).Day)"
         wedLabel.text       = "\(Date.init(timeIntervalSince1970: wed).Day)"
@@ -37,6 +37,9 @@ class MonthCalendarTableViewCell: UITableViewCell {
         friLabel.text       = "\(Date.init(timeIntervalSince1970: fri).Day)"
         satLabel.text       = "\(Date.init(timeIntervalSince1970: sat).Day)"
         sunLabel.text       = "\(Date.init(timeIntervalSince1970: sun).Day)"
+        
+        let firstDay    = currentDate.startOfMonth().timeIntervalSince1970
+        let lastDay     = currentDate.endOfMonth().timeIntervalSince1970
         
         if mon < firstDay || mon > lastDay {
             mondayLabel.textColor = .lightGray
@@ -79,5 +82,6 @@ class MonthCalendarTableViewCell: UITableViewCell {
         } else {
             sunLabel.textColor = .black
         }
+        
     }
 }

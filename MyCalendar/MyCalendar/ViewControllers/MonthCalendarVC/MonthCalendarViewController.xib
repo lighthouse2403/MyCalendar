@@ -100,7 +100,6 @@
             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="JwC-zy-iOj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="5:7" id="2DR-YK-nWt"/>
-                <constraint firstItem="3IS-yC-Esa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="31y-Lo-K3I"/>
                 <constraint firstItem="otp-bE-Ord" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="84H-Ed-gUt"/>
                 <constraint firstItem="ePD-OR-bPy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Cpu-kc-vcS"/>
                 <constraint firstItem="K7f-FH-xmM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="CtR-QE-HKd"/>
@@ -114,6 +113,7 @@
                 <constraint firstItem="3IS-yC-Esa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gcn-IH-Lxh"/>
                 <constraint firstItem="JwC-zy-iOj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gw2-Fo-1Zt"/>
                 <constraint firstItem="yKL-KF-y1L" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kwl-Or-rNw"/>
+                <constraint firstItem="3IS-yC-Esa" firstAttribute="top" secondItem="ePD-OR-bPy" secondAttribute="bottom" id="l49-S3-Pbe"/>
                 <constraint firstItem="yKL-KF-y1L" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="9:7" id="nkR-cJ-IRb"/>
                 <constraint firstItem="4aH-hT-WWY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="11:7" id="s35-JV-tps"/>
             </constraints>

@@ -10,7 +10,7 @@ import UIKit
 
 class MonthCalendarViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
-    var currentDate         = Date()
+    var currentDate: Date!
     var datesArray          = [[Double]]()
     var lunarDateArray      = [[Double]]()
     
@@ -19,16 +19,19 @@ class MonthCalendarViewController: BaseViewController, UITableViewDelegate, UITa
         self.setupUI()
         self.setupNavigationBar()
         self.getDates()
+        tableView.reloadData()
     }
     
     // MARK Setup UI
     func setupUI() {
         tableView.register(UINib.init(nibName: "MonthCalendarTableViewCell", bundle: nil), forCellReuseIdentifier: "MonthCalendarTableViewCell")
         tableView.isScrollEnabled   = false
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     func setupNavigationBar() {
-        self.title  = "Tháng 12"
+        self.title  = "Ngày \(currentDate.Day) tháng \(currentDate.Month)"
     }
     
     // MARK: - UITableView Delegate, Datasource
@@ -54,14 +57,15 @@ class MonthCalendarViewController: BaseViewController, UITableViewDelegate, UITa
                        fri: datesArray[5][indexPath.row],
                        sat: datesArray[6][indexPath.row],
                        sun: datesArray[0][indexPath.row],
-                       lastDay: currentDate.endOfMonth().timeIntervalSince1970,
-                       firstDay: currentDate.startOfMonth().timeIntervalSince1970)
+                       currentDate: currentDate)
         return cell
     }
     
     // MARK: Get dates of this month
     func getDates() {
         datesArray = DateMacro.generateDatesOfMonth(currentDate: currentDate)
-        
+        tableView.reloadData()
     }
 }
+
+

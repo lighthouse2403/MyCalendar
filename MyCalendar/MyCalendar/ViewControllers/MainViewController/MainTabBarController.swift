@@ -20,7 +20,7 @@ class MainTabBarController: UITabBarController {
                                                image: IMAGE(""),
                                                selectedImage: IMAGE(""))
         
-        let navigation2 = self.setupController(MonthCalendarViewController(),
+        let navigation2 = self.setupController(BasePageViewController(),
                                                tabName: "Lịch tháng",
                                                image: IMAGE(""),
                                                selectedImage: IMAGE(""))
