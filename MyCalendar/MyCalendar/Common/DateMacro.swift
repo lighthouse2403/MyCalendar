@@ -301,4 +301,51 @@ class DateMacro: NSObject {
         dateComponents.second = 0
         return calendar.date(byAdding: dateComponents, to: date) ?? Date()
     }
+    
+    static func generateDatesOfMonth(currentDate: Date) -> [[Double]] {
+        let currentStartMonth   = currentDate.startOfMonth().timeIntervalSince1970
+        let currentEndMonth     = currentDate.endOfMonth().timeIntervalSince1970
+
+        var dateArray           = [[Double](),[Double](),[Double](),[Double](),[Double](),[Double](),[Double]()]
+        
+        // Add date of last month
+        var lastDate        = currentStartMonth
+        let lastComponent   = DateMacro.getComponents(Date.init(timeIntervalSince1970: currentStartMonth))
+        var firstWeekDay    = lastComponent.weekday ?? 1
+        if firstWeekDay == 1 {
+            firstWeekDay = 7
+        }
+        
+        for index in 2...(firstWeekDay - 1) {
+            lastDate -= 86400
+            dateArray[firstWeekDay - 1 - (index - 2) - 1].append(lastDate)
+        }
+        
+        // Add date of this month
+        var midDate = currentStartMonth
+        while currentEndMonth >= midDate {
+            let component   = DateMacro.getComponents(Date.init(timeIntervalSince1970: midDate))
+            let weekDay     = component.weekday
+            
+            let index   = weekDay ?? 1
+            dateArray[index - 1].append(midDate)
+            
+            // Next day
+            midDate += 86400
+        }
+        
+        // Add date of last month
+        var nextDate        = currentEndMonth
+        let nextComponent   = DateMacro.getComponents(Date.init(timeIntervalSince1970: currentStartMonth))
+        let lastWeekDay     = nextComponent.weekday ?? 1
+
+        if lastWeekDay != 1 {
+            for index in lastWeekDay..<7 {
+                nextDate += 86400
+                dateArray[index - 1].append(nextDate)
+            }
+        }
+        
+        return dateArray
+    }
 }

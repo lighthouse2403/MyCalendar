@@ -34,28 +34,14 @@ extension Date {
         }
     }
     
-    var beginOfMonth: Date {
-        get {
-            var coms = self.getComponents()
-            coms.day = 1
-            coms.hour = 0
-            coms.minute = 0
-            coms.second = 0
-            
-            return Calendar.current.date(from: coms)!
-        }
+    func startOfMonth() -> Date {
+        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
     }
     
-    var endOfMonth: Date {
-        get {
-            var coms = DateComponents()
-            coms.month = 1
-            coms.second = -1
-            
-            return Calendar.current.date(byAdding: coms, to: self.beginOfMonth)!
-        }
+    func endOfMonth() -> Date {
+        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
     }
-    
+
     func previousMonth() -> Date {
         var coms = DateComponents()
         coms.month = -1
