@@ -41,14 +41,14 @@ extension BasePageViewController: UIPageViewControllerDelegate, UIPageViewContro
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         let monthCalendarViewController = MonthCalendarViewController()
-        monthCalendarViewController.currentDate = Date.init(timeIntervalSince1970: currentDate.timeIntervalSince1970 - 86400)
+        monthCalendarViewController.currentDate = currentDate.previousMonth()
         currentDate = monthCalendarViewController.currentDate
         return monthCalendarViewController
     }
     
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let monthCalendarViewController = MonthCalendarViewController()
-        monthCalendarViewController.currentDate = Date.init(timeIntervalSince1970: currentDate.timeIntervalSince1970 + 86400)
+        monthCalendarViewController.currentDate = currentDate.nextMonth()
 
         currentDate = monthCalendarViewController.currentDate
 

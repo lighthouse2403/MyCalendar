@@ -18,6 +18,22 @@ class MonthCalendarTableViewCell: UITableViewCell {
     @IBOutlet weak var satLabel: UILabel!
     @IBOutlet weak var sunLabel: UILabel!
     
+    @IBOutlet weak var lunarMonLabel: UILabel!
+    @IBOutlet weak var lunarTueLabel: UILabel!
+    @IBOutlet weak var lunarWedLabel: UILabel!
+    @IBOutlet weak var lunarThurLabel: UILabel!
+    @IBOutlet weak var lunarFriLabel: UILabel!
+    @IBOutlet weak var lunarSatLabel: UILabel!
+    @IBOutlet weak var lunarSunLabel: UILabel!
+    
+    @IBOutlet weak var monView: UIView!
+    @IBOutlet weak var tueView: UIView!
+    @IBOutlet weak var wedView: UIView!
+    @IBOutlet weak var thurView: UIView!
+    @IBOutlet weak var friView: UIView!
+    @IBOutlet weak var satView: UIView!
+    @IBOutlet weak var sunView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -30,14 +46,32 @@ class MonthCalendarTableViewCell: UITableViewCell {
     }
     
     func setupDate(mon: Double, tue: Double, wed: Double, thur: Double, fri: Double, sat: Double, sun: Double, currentDate: Date) {
-        mondayLabel.text    = "\(Date.init(timeIntervalSince1970: mon).Day)"
-        tueLabel.text       = "\(Date.init(timeIntervalSince1970: tue).Day)"
-        wedLabel.text       = "\(Date.init(timeIntervalSince1970: wed).Day)"
-        thurLabel.text      = "\(Date.init(timeIntervalSince1970: thur).Day)"
-        friLabel.text       = "\(Date.init(timeIntervalSince1970: fri).Day)"
-        satLabel.text       = "\(Date.init(timeIntervalSince1970: sat).Day)"
-        sunLabel.text       = "\(Date.init(timeIntervalSince1970: sun).Day)"
+        let monDate     = Date.init(timeIntervalSince1970: mon)
+        let tueDate     = Date.init(timeIntervalSince1970: tue)
+        let wedDate     = Date.init(timeIntervalSince1970: wed)
+        let thurDate    = Date.init(timeIntervalSince1970: thur)
+        let friDate     = Date.init(timeIntervalSince1970: fri)
+        let satDate     = Date.init(timeIntervalSince1970: sat)
+        let sunDate     = Date.init(timeIntervalSince1970: sun)
+
+        // Normal calendar
+        mondayLabel.text    = "\(monDate.Day)"
+        tueLabel.text       = "\(tueDate.Day)"
+        wedLabel.text       = "\(wedDate.Day)"
+        thurLabel.text      = "\(thurDate.Day)"
+        friLabel.text       = "\(friDate.Day)"
+        satLabel.text       = "\(satDate.Day)"
+        sunLabel.text       = "\(sunDate.Day)"
         
+        // Lunar
+        lunarMonLabel.text  = "\(DateMacro.convertSolar2Lunar(monDate.Day,mm: monDate.Month, yy: monDate.Year, timeZone: 7.0).0)"
+        lunarTueLabel.text  = "\(DateMacro.convertSolar2Lunar(tueDate.Day,mm: tueDate.Month, yy: tueDate.Year, timeZone: 7.0).0)"
+        lunarWedLabel.text  = "\(DateMacro.convertSolar2Lunar(wedDate.Day,mm: wedDate.Month, yy: wedDate.Year, timeZone: 7.0).0)"
+        lunarThurLabel.text = "\(DateMacro.convertSolar2Lunar(thurDate.Day,mm: thurDate.Month, yy: thurDate.Year, timeZone: 7.0).0)"
+        lunarFriLabel.text  = "\(DateMacro.convertSolar2Lunar(friDate.Day,mm: friDate.Month, yy: friDate.Year, timeZone: 7.0).0)"
+        lunarSatLabel.text  = "\(DateMacro.convertSolar2Lunar(satDate.Day,mm: satDate.Month, yy: satDate.Year, timeZone: 7.0).0)"
+        lunarSunLabel.text  = "\(DateMacro.convertSolar2Lunar(sunDate.Day,mm: sunDate.Month, yy: sunDate.Year, timeZone: 7.0).0)"
+
         let firstDay    = currentDate.startOfMonth().timeIntervalSince1970
         let lastDay     = currentDate.endOfMonth().timeIntervalSince1970
         

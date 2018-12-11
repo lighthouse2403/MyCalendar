@@ -292,12 +292,26 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="friLabel" destination="jJQ-qq-dKw" id="YKB-7K-tI3"/>
+                <outlet property="friView" destination="22w-go-zY0" id="jlK-yY-twn"/>
+                <outlet property="lunarFriLabel" destination="te6-hN-L7r" id="N1t-v9-gpp"/>
+                <outlet property="lunarMonLabel" destination="3Tf-j3-2hj" id="VDj-AK-JGg"/>
+                <outlet property="lunarSatLabel" destination="10l-NZ-jZH" id="Z9I-CK-Oza"/>
+                <outlet property="lunarSunLabel" destination="wbu-kq-lCF" id="xSP-dS-Ytd"/>
+                <outlet property="lunarThurLabel" destination="fD2-ou-rRs" id="wVh-5C-cu2"/>
+                <outlet property="lunarTueLabel" destination="nKT-v9-moA" id="FyO-Zt-BKF"/>
+                <outlet property="lunarWedLabel" destination="YQZ-jX-Qzb" id="oDv-nT-VxK"/>
+                <outlet property="monView" destination="APb-Es-y3p" id="STg-ct-5CZ"/>
                 <outlet property="mondayLabel" destination="Brn-17-yyd" id="AVn-Fh-u6H"/>
                 <outlet property="satLabel" destination="QS1-C3-woB" id="ece-Vq-iTw"/>
+                <outlet property="satView" destination="jho-tW-KKC" id="LZ3-z9-gJB"/>
                 <outlet property="sunLabel" destination="hlH-3q-vd2" id="iI9-cU-xT4"/>
+                <outlet property="sunView" destination="3Y2-yA-vNx" id="6kZ-nl-4fH"/>
                 <outlet property="thurLabel" destination="YJZ-eC-Plb" id="b4S-fe-mZY"/>
+                <outlet property="thurView" destination="uRI-Xd-J7J" id="kvX-0C-rId"/>
                 <outlet property="tueLabel" destination="rWN-lM-OU9" id="MjL-Rc-qKw"/>
+                <outlet property="tueView" destination="Xiq-Su-x6D" id="nbB-hg-n8B"/>
                 <outlet property="wedLabel" destination="ww4-eC-TSY" id="XDC-fJ-WCN"/>
+                <outlet property="wedView" destination="VMj-13-8ZY" id="Bvv-5u-wRE"/>
             </connections>
         </tableViewCell>
     </objects>

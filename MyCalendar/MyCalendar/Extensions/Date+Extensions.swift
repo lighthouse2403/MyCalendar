@@ -48,6 +48,12 @@ extension Date {
         return Calendar.current.date(byAdding: coms, to: self)!
     }
     
+    func nextMonth() -> Date {
+        var coms = DateComponents()
+        coms.month = 1
+        return Calendar.current.date(byAdding: coms, to: self)!
+    }
+    
     func withoutSecond() -> Date {
         let calendar = Calendar.current
         let unitFlags = Set<Calendar.Component>([.day, .month, .year, .hour, .minute])

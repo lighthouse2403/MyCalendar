@@ -316,9 +316,12 @@ class DateMacro: NSObject {
             firstWeekDay = 7
         }
         
-        for index in 2...(firstWeekDay - 1) {
-            lastDate -= 86400
-            dateArray[firstWeekDay - 1 - (index - 2) - 1].append(lastDate)
+        // Check last week date different monday
+        if firstWeekDay > 2 {
+            for index in 2...(firstWeekDay - 1) {
+                lastDate -= 86400
+                dateArray[firstWeekDay - 1 - (index - 2) - 1].append(lastDate)
+            }
         }
         
         // Add date of this month
@@ -336,14 +339,19 @@ class DateMacro: NSObject {
         
         // Add date of last month
         var nextDate        = currentEndMonth
-        let nextComponent   = DateMacro.getComponents(Date.init(timeIntervalSince1970: currentStartMonth))
+        let nextComponent   = DateMacro.getComponents(Date.init(timeIntervalSince1970: currentEndMonth))
         let lastWeekDay     = nextComponent.weekday ?? 1
 
-        if lastWeekDay != 1 {
-            for index in lastWeekDay..<7 {
-                nextDate += 86400
-                dateArray[index - 1].append(nextDate)
+        if lastWeekDay != 1{
+            // Check last week date different saturday
+            if lastWeekDay < 7 {
+                for index in (lastWeekDay + 1)...7 {
+                    nextDate += 86400
+                    dateArray[index - 1].append(nextDate)
+                }
             }
+            
+            dateArray[0].append(nextDate + 86400)
         }
         
         return dateArray
