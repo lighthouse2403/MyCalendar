@@ -22,6 +22,7 @@ class BasePageViewController: BaseViewController {
     
     func setupNavigationBar() {
         self.navigationController?.navigationBar.isTranslucent = false
+        self.title = "\(currentDate.stringFromDate(format: "MM-yyyy"))"
     }
     
     private func setupPageViewController() {
@@ -41,6 +42,8 @@ extension BasePageViewController: UIPageViewControllerDelegate, UIPageViewContro
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if finished, completed {
             print("finished")
+            self.setupNavigationBar()
+
         }
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
