@@ -132,4 +132,10 @@ extension Date {
         return end - start
     }
     
+    func stringFromDate(format: String) -> String {
+        let formatter = DateFormatter.init()
+        formatter.dateFormat = format
+        formatter.locale = NSLocale.system
+        return formatter.string(from: self)
+    }
 }

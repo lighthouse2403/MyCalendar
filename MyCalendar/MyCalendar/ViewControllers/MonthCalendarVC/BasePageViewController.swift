@@ -15,8 +15,13 @@ class BasePageViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNavigationBar()
         self.setupPageViewController()
         // Do any additional setup after loading the view.
+    }
+    
+    func setupNavigationBar() {
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     private func setupPageViewController() {

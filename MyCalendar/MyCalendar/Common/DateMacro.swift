@@ -306,6 +306,9 @@ class DateMacro: NSObject {
         let currentStartMonth   = currentDate.startOfMonth().timeIntervalSince1970
         let currentEndMonth     = currentDate.endOfMonth().timeIntervalSince1970
 
+        print("start: \(currentDate.startOfMonth().stringFromDate(format: "dd-MM-yyyy HH:mm"))")
+        
+        print("end: \(currentDate.endOfMonth().stringFromDate(format: "dd-MM-yyyy HH:mm"))")
         var dateArray           = [[Double](),[Double](),[Double](),[Double](),[Double](),[Double](),[Double]()]
         
         // Add date of last month

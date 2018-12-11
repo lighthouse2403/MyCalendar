@@ -46,6 +46,9 @@ class MonthCalendarTableViewCell: UITableViewCell {
     }
     
     func setupDate(mon: Double, tue: Double, wed: Double, thur: Double, fri: Double, sat: Double, sun: Double, currentDate: Date) {
+        
+        // Border date view
+        
         let monDate     = Date.init(timeIntervalSince1970: mon)
         let tueDate     = Date.init(timeIntervalSince1970: tue)
         let wedDate     = Date.init(timeIntervalSince1970: wed)
@@ -117,5 +120,47 @@ class MonthCalendarTableViewCell: UITableViewCell {
             sunLabel.textColor = .black
         }
         
+        // Detect today
+        if mon.rounded() == Date().timeIntervalSince1970.rounded()  {
+            monView.backgroundColor = .orange
+        } else {
+            monView.backgroundColor = .clear
+        }
+        
+        if Int(tue/86400) == Int(currentDate.timeIntervalSince1970/86400)  {
+            tueView.backgroundColor = .orange
+        } else {
+            tueView.backgroundColor = .clear
+        }
+        
+        if wed.rounded() == Date().timeIntervalSince1970.rounded()  {
+            wedView.backgroundColor = .orange
+        } else {
+            wedView.backgroundColor = .clear
+        }
+        
+        if thur.rounded() == Date().timeIntervalSince1970.rounded()  {
+            thurView.backgroundColor = .orange
+        } else {
+            thurView.backgroundColor = .clear
+        }
+        
+        if fri.rounded() == Date().timeIntervalSince1970.rounded()  {
+            friView.backgroundColor = .orange
+        } else {
+            friView.backgroundColor = .clear
+        }
+        
+        if sat.rounded() == Date().timeIntervalSince1970.rounded()  {
+            satView.backgroundColor = .orange
+        } else {
+            satView.backgroundColor = .clear
+        }
+        
+        if sun.rounded() == Date().timeIntervalSince1970.rounded()  {
+            sunView.backgroundColor = .orange
+        } else {
+            sunView.backgroundColor = .clear
+        }
     }
 }
