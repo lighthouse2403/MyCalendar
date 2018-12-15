@@ -48,7 +48,14 @@ class MonthCalendarTableViewCell: UITableViewCell {
     func setupDate(mon: Double, tue: Double, wed: Double, thur: Double, fri: Double, sat: Double, sun: Double, currentDate: Date) {
         
         // Border date view
-        
+        monView.setupBorder()
+        tueView.setupBorder()
+        wedView.setupBorder()
+        thurView.setupBorder()
+        friView.setupBorder()
+        satView.setupBorder()
+        sunView.setupBorder()
+
         let monDate     = Date.init(timeIntervalSince1970: mon)
         let tueDate     = Date.init(timeIntervalSince1970: tue)
         let wedDate     = Date.init(timeIntervalSince1970: wed)
@@ -67,13 +74,27 @@ class MonthCalendarTableViewCell: UITableViewCell {
         sunLabel.text       = "\(sunDate.Day)"
         
         // Lunar
-        lunarMonLabel.text  = "\(DateMacro.convertSolar2Lunar(monDate.Day,mm: monDate.Month, yy: monDate.Year, timeZone: 7.0).0)"
-        lunarTueLabel.text  = "\(DateMacro.convertSolar2Lunar(tueDate.Day,mm: tueDate.Month, yy: tueDate.Year, timeZone: 7.0).0)"
-        lunarWedLabel.text  = "\(DateMacro.convertSolar2Lunar(wedDate.Day,mm: wedDate.Month, yy: wedDate.Year, timeZone: 7.0).0)"
-        lunarThurLabel.text = "\(DateMacro.convertSolar2Lunar(thurDate.Day,mm: thurDate.Month, yy: thurDate.Year, timeZone: 7.0).0)"
-        lunarFriLabel.text  = "\(DateMacro.convertSolar2Lunar(friDate.Day,mm: friDate.Month, yy: friDate.Year, timeZone: 7.0).0)"
-        lunarSatLabel.text  = "\(DateMacro.convertSolar2Lunar(satDate.Day,mm: satDate.Month, yy: satDate.Year, timeZone: 7.0).0)"
-        lunarSunLabel.text  = "\(DateMacro.convertSolar2Lunar(sunDate.Day,mm: sunDate.Month, yy: sunDate.Year, timeZone: 7.0).0)"
+        let lunarMon = DateMacro.convertSolar2Lunar(monDate.Day,mm: monDate.Month, yy: monDate.Year, timeZone: 7.0).0 == 1 ? "\(DateMacro.convertSolar2Lunar(monDate.Day,mm: monDate.Month, yy: monDate.Year, timeZone: 7.0).0)/\(DateMacro.convertSolar2Lunar(monDate.Day,mm: monDate.Month, yy: monDate.Year, timeZone: 7.0).1)" : "\(DateMacro.convertSolar2Lunar(monDate.Day,mm: monDate.Month, yy: monDate.Year, timeZone: 7.0).0)"
+        
+        let lunarTue = DateMacro.convertSolar2Lunar(tueDate.Day,mm: tueDate.Month, yy: tueDate.Year, timeZone: 7.0).0 == 1 ? "\(DateMacro.convertSolar2Lunar(tueDate.Day,mm: tueDate.Month, yy: tueDate.Year, timeZone: 7.0).0)/\(DateMacro.convertSolar2Lunar(tueDate.Day,mm: tueDate.Month, yy: tueDate.Year, timeZone: 7.0).1)" : "\(DateMacro.convertSolar2Lunar(tueDate.Day,mm: tueDate.Month, yy: tueDate.Year, timeZone: 7.0).0)"
+
+        let lunarWed = DateMacro.convertSolar2Lunar(wedDate.Day,mm: wedDate.Month, yy: wedDate.Year, timeZone: 7.0).0 == 1 ? "\(DateMacro.convertSolar2Lunar(wedDate.Day,mm: wedDate.Month, yy: wedDate.Year, timeZone: 7.0).0)/\(DateMacro.convertSolar2Lunar(wedDate.Day,mm: wedDate.Month, yy: wedDate.Year, timeZone: 7.0).1)" : "\(DateMacro.convertSolar2Lunar(wedDate.Day,mm: wedDate.Month, yy: wedDate.Year, timeZone: 7.0).0)"
+
+        let lunarThur = DateMacro.convertSolar2Lunar(thurDate.Day,mm: thurDate.Month, yy: thurDate.Year, timeZone: 7.0).0 == 1 ? "\(DateMacro.convertSolar2Lunar(thurDate.Day,mm: thurDate.Month, yy: thurDate.Year, timeZone: 7.0).0)/\(DateMacro.convertSolar2Lunar(thurDate.Day,mm: thurDate.Month, yy: thurDate.Year, timeZone: 7.0).1)" : "\(DateMacro.convertSolar2Lunar(thurDate.Day,mm: thurDate.Month, yy: thurDate.Year, timeZone: 7.0).0)"
+
+        let lunarFri = DateMacro.convertSolar2Lunar(friDate.Day,mm: friDate.Month, yy: friDate.Year, timeZone: 7.0).0 == 1 ? "\(DateMacro.convertSolar2Lunar(friDate.Day,mm: friDate.Month, yy: friDate.Year, timeZone: 7.0).0)/\(DateMacro.convertSolar2Lunar(friDate.Day,mm: friDate.Month, yy: friDate.Year, timeZone: 7.0).1)" : "\(DateMacro.convertSolar2Lunar(friDate.Day,mm: friDate.Month, yy: friDate.Year, timeZone: 7.0).0)"
+
+        let lunarSat = DateMacro.convertSolar2Lunar(satDate.Day,mm: satDate.Month, yy: satDate.Year, timeZone: 7.0).0 == 1 ? "\(DateMacro.convertSolar2Lunar(satDate.Day,mm: satDate.Month, yy: satDate.Year, timeZone: 7.0).0)/\(DateMacro.convertSolar2Lunar(satDate.Day,mm: satDate.Month, yy: satDate.Year, timeZone: 7.0).1)" : "\(DateMacro.convertSolar2Lunar(satDate.Day,mm: satDate.Month, yy: satDate.Year, timeZone: 7.0).0)"
+
+        let lunarSun = DateMacro.convertSolar2Lunar(sunDate.Day,mm: sunDate.Month, yy: sunDate.Year, timeZone: 7.0).0 == 1 ? "\(DateMacro.convertSolar2Lunar(sunDate.Day,mm: sunDate.Month, yy: sunDate.Year, timeZone: 7.0).0)/\(DateMacro.convertSolar2Lunar(sunDate.Day,mm: sunDate.Month, yy: sunDate.Year, timeZone: 7.0).1)" : "\(DateMacro.convertSolar2Lunar(sunDate.Day,mm: sunDate.Month, yy: sunDate.Year, timeZone: 7.0).0)"
+
+        lunarMonLabel.text  = lunarMon
+        lunarTueLabel.text  = lunarTue
+        lunarWedLabel.text  = lunarWed
+        lunarThurLabel.text = lunarThur
+        lunarFriLabel.text  = lunarFri
+        lunarSatLabel.text  = lunarSat
+        lunarSunLabel.text  = lunarSun
 
         let firstDay    = currentDate.startOfMonth().timeIntervalSince1970
         let lastDay     = currentDate.endOfMonth().timeIntervalSince1970
@@ -121,46 +142,60 @@ class MonthCalendarTableViewCell: UITableViewCell {
         }
         
         // Detect today
-        if mon.rounded() == Date().timeIntervalSince1970.rounded()  {
-            monView.backgroundColor = .orange
+        if Date.init(timeIntervalSince1970: mon).isToday() {
+            monView.backgroundColor = UIColor.init(hex: todayColor)
+            lunarMonLabel.textColor = .white
         } else {
             monView.backgroundColor = .clear
+            lunarMonLabel.textColor = .lightGray
         }
         
-        if Int(tue/86400) == Int(currentDate.timeIntervalSince1970/86400)  {
-            tueView.backgroundColor = .orange
+        if Date.init(timeIntervalSince1970: tue).isToday() {
+            tueView.backgroundColor = UIColor.init(hex: todayColor)
+            lunarTueLabel.textColor = .white
         } else {
             tueView.backgroundColor = .clear
+            lunarTueLabel.textColor = .lightGray
         }
         
-        if wed.rounded() == Date().timeIntervalSince1970.rounded()  {
-            wedView.backgroundColor = .orange
+        if Date.init(timeIntervalSince1970: wed).isToday() {
+            wedView.backgroundColor = UIColor.init(hex: todayColor)
+            lunarWedLabel.textColor = .white
         } else {
             wedView.backgroundColor = .clear
+            lunarWedLabel.textColor = .lightGray
         }
         
-        if thur.rounded() == Date().timeIntervalSince1970.rounded()  {
-            thurView.backgroundColor = .orange
+        if Date.init(timeIntervalSince1970: thur).isToday()  {
+            thurView.backgroundColor = UIColor.init(hex: todayColor)
+            lunarThurLabel.textColor = .white
         } else {
             thurView.backgroundColor = .clear
+            lunarThurLabel.textColor = .lightGray
         }
         
-        if fri.rounded() == Date().timeIntervalSince1970.rounded()  {
-            friView.backgroundColor = .orange
+        if Date.init(timeIntervalSince1970: fri).isToday() {
+            friView.backgroundColor = UIColor.init(hex: todayColor)
+            lunarFriLabel.textColor = .white
         } else {
             friView.backgroundColor = .clear
+            lunarFriLabel.textColor = .lightGray
         }
         
-        if sat.rounded() == Date().timeIntervalSince1970.rounded()  {
-            satView.backgroundColor = .orange
+        if Date.init(timeIntervalSince1970: sat).isToday() {
+            satView.backgroundColor = UIColor.init(hex: todayColor)
+            lunarSatLabel.textColor = .white
         } else {
             satView.backgroundColor = .clear
+            lunarSatLabel.textColor = .lightGray
         }
         
-        if sun.rounded() == Date().timeIntervalSince1970.rounded()  {
-            sunView.backgroundColor = .orange
+        if Date.init(timeIntervalSince1970: sun).isToday() {
+            sunView.backgroundColor = UIColor.init(hex: todayColor)
+            lunarSunLabel.textColor = .white
         } else {
             sunView.backgroundColor = .clear
+            lunarSunLabel.textColor = .lightGray
         }
     }
 }

@@ -9,16 +9,19 @@
 import UIKit
 
 class MonthCalendarViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tableHeight: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     var currentDate: Date!
     var datesArray          = [[Double]]()
     var lunarDateArray      = [[Double]]()
+    var parentNav           = UINavigationController()
+    var numberOfWeek        = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupUI()
-        self.setupNavigationBar()
         self.getDates()
+        self.setupUI()
+        tableHeight.constant = CGFloat(numberOfWeek * 50)
         tableView.reloadData()
     }
     
@@ -30,17 +33,13 @@ class MonthCalendarViewController: BaseViewController, UITableViewDelegate, UITa
         tableView.dataSource = self
     }
     
-    func setupNavigationBar() {
-        self.title  = "Ngày \(currentDate.Day) tháng \(currentDate.Month)"
-    }
-    
     // MARK: - UITableView Delegate, Datasource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return datesArray.first?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -64,6 +63,7 @@ class MonthCalendarViewController: BaseViewController, UITableViewDelegate, UITa
     // MARK: Get dates of this month
     func getDates() {
         datesArray = DateMacro.generateDatesOfMonth(currentDate: currentDate)
+        numberOfWeek = datesArray.first?.count ?? 0
         tableView.reloadData()
     }
 }
