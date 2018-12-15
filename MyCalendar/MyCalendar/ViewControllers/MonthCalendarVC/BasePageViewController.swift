@@ -26,7 +26,7 @@ class BasePageViewController: BaseViewController {
         self.addLeftBarItem(imageName: "", title: "Back")
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor.init(hex: todayColor)
-        self.title = "\(currentDate.stringFromDate(format: "MM-yyyy"))"
+        self.customTitle(title: "\(currentDate.stringFromDate(format: "MM-yyyy"))")
     }
     
     private func setupPageViewController() {

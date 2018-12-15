@@ -14,7 +14,6 @@ class MonthCalendarViewController: BaseViewController, UITableViewDelegate, UITa
     var currentDate: Date!
     var datesArray          = [[Double]]()
     var lunarDateArray      = [[Double]]()
-    var parentNav           = UINavigationController()
     var numberOfWeek        = 0
     
     override func viewDidLoad() {
@@ -22,9 +21,11 @@ class MonthCalendarViewController: BaseViewController, UITableViewDelegate, UITa
         self.getDates()
         self.setupUI()
         tableHeight.constant = CGFloat(numberOfWeek * 50)
-        tableView.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        print("View will appear")
+    }
     // MARK Setup UI
     func setupUI() {
         tableView.register(UINib.init(nibName: "MonthCalendarTableViewCell", bundle: nil), forCellReuseIdentifier: "MonthCalendarTableViewCell")
@@ -43,7 +44,7 @@ class MonthCalendarViewController: BaseViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 45
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

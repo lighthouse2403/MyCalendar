@@ -342,7 +342,7 @@ class DateMacro: NSObject {
         let nextComponent   = DateMacro.getComponents(Date.init(timeIntervalSince1970: currentEndMonth))
         let lastWeekDay     = nextComponent.weekday ?? 1
 
-        if lastWeekDay != 1{
+        if lastWeekDay != 1 {
             // Check last week date different saturday
             if lastWeekDay < 7 {
                 for index in (lastWeekDay + 1)...7 {

@@ -138,7 +138,7 @@ class MonthCalendarTableViewCell: UITableViewCell {
         if sun < firstDay || sun > lastDay {
             sunLabel.textColor = .lightGray
         } else {
-            sunLabel.textColor = .black
+            sunLabel.textColor = .red
         }
         
         // Detect today

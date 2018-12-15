@@ -101,13 +101,12 @@
                         <constraint firstItem="yKL-KF-y1L" firstAttribute="centerX" secondItem="ee7-RY-bV7" secondAttribute="centerX" multiplier="9:7" id="u6W-RD-QHE"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3IS-yC-Esa">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3IS-yC-Esa">
                     <rect key="frame" x="0.0" y="60" width="320" height="250"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="mkO-Lv-9Kj"/>
                     </constraints>
-                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="r5m-KF-wzF"/>
                         <outlet property="delegate" destination="-1" id="EEf-Is-Exk"/>
