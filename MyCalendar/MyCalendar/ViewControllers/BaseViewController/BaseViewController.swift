@@ -77,7 +77,7 @@ class BaseViewController: UIViewController {
         
         let titleLabel = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: widthValue, height: 44))
         titleLabel.numberOfLines = 2
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 22)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
         titleLabel.textColor = UIColor.white
         titleLabel.textAlignment = .center
         titleLabel.text = title
@@ -101,7 +101,7 @@ class BaseViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = .white
         self.navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedStringKey.foregroundColor : UIColor.white,
-            NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 24)
+            NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 20)
         ]
         self.title = title
     }
