@@ -18,12 +18,13 @@ class MonthCalendarViewController: BaseViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getDates()
-        self.setupUI()
-        tableHeight.constant = CGFloat(numberOfWeek * 50)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.getDates()
+        self.setupUI()
+        tableHeight.constant = CGFloat(numberOfWeek * 50)
+
         print("View will appear")
     }
     // MARK Setup UI
@@ -66,6 +67,7 @@ class MonthCalendarViewController: BaseViewController, UITableViewDelegate, UITa
         datesArray = DateMacro.generateDatesOfMonth(currentDate: currentDate)
         numberOfWeek = datesArray.first?.count ?? 0
         tableView.reloadData()
+        print(datesArray.description)
     }
 }
 
