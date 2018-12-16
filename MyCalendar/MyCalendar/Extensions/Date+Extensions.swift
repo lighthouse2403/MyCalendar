@@ -39,11 +39,19 @@ extension Date {
     }
     
     func startOfMonth() -> Date {
-        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+        let comp: DateComponents = Calendar.current.dateComponents([.year, .month], from: self)
+        let startOfMonth = Calendar.current.date(from: comp)!
+
+        return startOfMonth
     }
     
     func endOfMonth() -> Date {
-        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+        var comps2 = DateComponents()
+        comps2.month = 1
+        comps2.day = -1
+        let endOfMonth = Calendar.current.date(byAdding: comps2, to: self.startOfMonth())!
+
+        return endOfMonth
     }
 
     func previousMonth() -> Date {
