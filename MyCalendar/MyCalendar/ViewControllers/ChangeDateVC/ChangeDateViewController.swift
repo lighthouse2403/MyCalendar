@@ -9,22 +9,49 @@
 import UIKit
 
 class ChangeDateViewController: UIViewController {
-
+    @IBOutlet weak var calendarDatePicker: UIDatePicker!
+    @IBOutlet weak var lunarDatePicker: UIDatePicker!
+    
+    // MARK: - Variable Calendar
+    var yearArray   = [Int]()
+    var monthArray  = [1,2,3,4,5,6,7,8,9,10,11,12]
+    var dateArray   = [Int]()
+    
+    // MARK: - Variable Lunar Calendar
+    var lunarDateArray   = [Int]()
+    var lunarMonthArray  = [1,2,3,4,5,6,7,8,9,10,11,12]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.setupUI()
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: Set up UI
+    func setupUI() {
+        calendarDatePicker.datePickerMode = .date
+        calendarDatePicker.setDate(Date(), animated: false)
+        calendarDatePicker.locale = Locale.init(identifier: "vi_VN")
+        
+        lunarDatePicker.datePickerMode = .date
+        lunarDatePicker.setDate(Date(), animated: false)
+        lunarDatePicker.locale = Locale.init(identifier: "vi_VN")
+        lunarDatePicker.calendar = Calendar.init(identifier: .chinese)
     }
-    */
+    
+    func defaultVariable() {
+        // Get 200 years
+        for index in 0...200 {
+            yearArray.append(1900 + index)
+        }
+        
+        // Get number of month for current year
+        // First day of month 11
+        let a11 = DateMacro.getLunarMonth11(Date().Year, timeZone: 7)
 
+        let leapMonth = DateMacro.getLeapMonthOffset(a11, timeZone: 7) - 2
+        if DateMacro.detectLeapYear(year: Date().Year) {
+            lunarMonthArray.append(leapMonth)
+            lunarMonthArray.sort()
+        }
+    }
 }

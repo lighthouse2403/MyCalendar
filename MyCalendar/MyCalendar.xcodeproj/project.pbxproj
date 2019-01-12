@@ -29,6 +29,7 @@
 		8887E09321BED1BB00459B0E /* BasePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8887E09221BED1BB00459B0E /* BasePageViewController.swift */; };
 		8888B08621BD8EB1009A08A6 /* MonthCalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888B08421BD8EB1009A08A6 /* MonthCalendarTableViewCell.swift */; };
 		8888B08721BD8EB1009A08A6 /* MonthCalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8888B08521BD8EB1009A08A6 /* MonthCalendarTableViewCell.xib */; };
+		88E2F09421C81177007500AA /* CalendarNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E2F09321C81177007500AA /* CalendarNoteViewController.swift */; };
 		8BAF9D4E20C001330092B907 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAF9D4D20C001330092B907 /* AppDelegate.swift */; };
 		8BAF9D5020C001330092B907 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAF9D4F20C001330092B907 /* ViewController.swift */; };
 		8BAF9D5320C001330092B907 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BAF9D5120C001330092B907 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		8887E09221BED1BB00459B0E /* BasePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePageViewController.swift; sourceTree = "<group>"; };
 		8888B08421BD8EB1009A08A6 /* MonthCalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCalendarTableViewCell.swift; sourceTree = "<group>"; };
 		8888B08521BD8EB1009A08A6 /* MonthCalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthCalendarTableViewCell.xib; sourceTree = "<group>"; };
+		88E2F09321C81177007500AA /* CalendarNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarNoteViewController.swift; sourceTree = "<group>"; };
 		8BAF9D4A20C001330092B907 /* MyCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BAF9D4D20C001330092B907 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BAF9D4F20C001330092B907 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		88E2F09221C8114A007500AA /* CalendarNote */ = {
+			isa = PBXGroup;
+			children = (
+				88E2F09321C81177007500AA /* CalendarNoteViewController.swift */,
+			);
+			path = CalendarNote;
+			sourceTree = "<group>";
+		};
 		8BAF9D4120C001330092B907 = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +202,7 @@
 				8BAF9D6420C004B60092B907 /* MainViewController */,
 				511941F521AFCE1000C49766 /* DateCalendarVC */,
 				511941F721AFCE1000C49766 /* MonthCalendarVC */,
+				88E2F09221C8114A007500AA /* CalendarNote */,
 				511941F621AFCE1000C49766 /* ChangeDateVC */,
 				511941F421AFCE1000C49766 /* MoreVC */,
 			);
@@ -383,6 +394,7 @@
 				5123B06521B6575C00C08F40 /* DateMacro.swift in Sources */,
 				51A07C9121B1136800A841BB /* MainTabBarController.swift in Sources */,
 				517B18A721B76D38007FA718 /* Time.swift in Sources */,
+				88E2F09421C81177007500AA /* CalendarNoteViewController.swift in Sources */,
 				8887E09321BED1BB00459B0E /* BasePageViewController.swift in Sources */,
 				8BAF9D5020C001330092B907 /* ViewController.swift in Sources */,
 				511941FA21AFCE4800C49766 /* DateCalendarViewController.swift in Sources */,
@@ -534,14 +546,17 @@
 			baseConfigurationReference = E8E91C1B6A4A330CD8D21573 /* Pods-MyCalendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RT689AHQ26;
+				DEVELOPMENT_TEAM = Q38789M8SL;
 				INFOPLIST_FILE = MyCalendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.themask.MyCalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -550,14 +565,17 @@
 			baseConfigurationReference = 84B8D523FC98A5F66F938901 /* Pods-MyCalendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RT689AHQ26;
+				DEVELOPMENT_TEAM = Q38789M8SL;
 				INFOPLIST_FILE = MyCalendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.themask.MyCalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -46,9 +46,10 @@ class MainTabBarController: UITabBarController {
         let normalAttributes: PKEYS = [ NSAttributedStringKey.foregroundColor : MThemes.current.tabBarTextColor(),
                                         NSAttributedStringKey.font : FONT_REGULAR(12.0) ]
         
-        let tabbarItem = UITabBarItem(title: tabName,
-                                      image: image.withRenderingMode(.alwaysOriginal),
-                                      selectedImage: selectedImage.withRenderingMode(.alwaysOriginal))
+//        let tabbarItem = UITabBarItem(title: tabName,
+//                                      image: image.withRenderingMode(.alwaysOriginal),
+//                                      selectedImage: selectedImage.withRenderingMode(.alwaysOriginal))
+                let tabbarItem = UITabBarItem.init(title: tabName, image: nil, selectedImage: nil)
         tabbarItem.setTitleTextAttributes(normalAttributes, for: .normal)
         tabbarItem.imageInsets = UIEdgeInsetsMake(-2, 0, 2, 0)
         tabbarItem.titlePositionAdjustment = UIOffsetMake(0, -5)
