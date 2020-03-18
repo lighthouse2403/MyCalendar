@@ -64,7 +64,7 @@
 		8888B08421BD8EB1009A08A6 /* MonthCalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCalendarTableViewCell.swift; sourceTree = "<group>"; };
 		8888B08521BD8EB1009A08A6 /* MonthCalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthCalendarTableViewCell.xib; sourceTree = "<group>"; };
 		88E2F09321C81177007500AA /* CalendarNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarNoteViewController.swift; sourceTree = "<group>"; };
-		8BAF9D4A20C001330092B907 /* MyCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BAF9D4A20C001330092B907 /* MyDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BAF9D4D20C001330092B907 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BAF9D4F20C001330092B907 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8BAF9D5220C001330092B907 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 		8BAF9D4B20C001330092B907 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8BAF9D4A20C001330092B907 /* MyCalendar.app */,
+				8BAF9D4A20C001330092B907 /* MyDiary.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -262,9 +262,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8BAF9D4920C001330092B907 /* MyCalendar */ = {
+		8BAF9D4920C001330092B907 /* MyDiary */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8BAF9D5C20C001330092B907 /* Build configuration list for PBXNativeTarget "MyCalendar" */;
+			buildConfigurationList = 8BAF9D5C20C001330092B907 /* Build configuration list for PBXNativeTarget "MyDiary" */;
 			buildPhases = (
 				2FFB305DC8BD07344251CA02 /* [CP] Check Pods Manifest.lock */,
 				8BAF9D4620C001330092B907 /* Sources */,
@@ -276,9 +276,9 @@
 			);
 			dependencies = (
 			);
-			name = MyCalendar;
+			name = MyDiary;
 			productName = MyCalendar;
-			productReference = 8BAF9D4A20C001330092B907 /* MyCalendar.app */;
+			productReference = 8BAF9D4A20C001330092B907 /* MyDiary.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -310,7 +310,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8BAF9D4920C001330092B907 /* MyCalendar */,
+				8BAF9D4920C001330092B907 /* MyDiary */,
 			);
 		};
 /* End PBXProject section */
@@ -552,8 +552,8 @@
 				INFOPLIST_FILE = MyCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.MyCalendar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MyDiary;
+				PRODUCT_NAME = MyDiary;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -571,8 +571,8 @@
 				INFOPLIST_FILE = MyCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.MyCalendar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MyDiary;
+				PRODUCT_NAME = MyDiary;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -591,7 +591,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8BAF9D5C20C001330092B907 /* Build configuration list for PBXNativeTarget "MyCalendar" */ = {
+		8BAF9D5C20C001330092B907 /* Build configuration list for PBXNativeTarget "MyDiary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8BAF9D5D20C001330092B907 /* Debug */,
